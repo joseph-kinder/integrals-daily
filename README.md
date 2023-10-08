@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# An Integral a Day Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![App Screenshot](screenshot.png)
 
-## Available Scripts
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [File Structure](#file-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+"An Integral a Day" is a simple web app that displays a different integral every day. It provides users with a new mathematical integral to learn and explore each day.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Displays a different integral every day
+- Supports both light and dark modes
+- Includes a donate button for supporting the creator
 
-### `npm test`
+## Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can see a live demo of the app [here](https://your-app-url.com).
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run this project locally, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/your-username/an-integral-a-day.git
+Install dependencies:
 
-### `npm run eject`
+bash
+Copy code
+cd an-integral-a-day
+npm install
+Start the app:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy code
+npm start
+This will start the development server. You can view the app in your web browser at http://localhost:3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Usage
+Visit the app to see the integral of the day.
+Use the sliding sidebar to toggle between light and dark modes.
+Click the "Donate to Creator" button to support the project.
+Technologies Used
+React
+LaTeX for mathematical notation
+Other dependencies (list them if necessary)
+File Structure
+php
+Copy code
+├── public/             # Public files (favicon, index.html, etc.)
+├── src/                # Source code
+│   ├── components/     # React components
+│   ├── data/           # JSON data (integrals)
+│   ├── App.js          # Main component
+│   ├── Integral.js     # Component for displaying integrals
+│   ├── Sidebar.js      # Sidebar component for light/dark mode and donation button
+│   └── ...
+├── package.json        # Project configuration
+├── README.md           # Project documentation
+└── ...
+Contributing
+If you'd like to contribute to this project, please follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Fork the repository
+Create a new branch for your feature (git checkout -b feature-name)
+Make your changes and commit them (git commit -m 'Description of changes')
+Push your changes to your forked repository (git push origin feature-name)
+Create a pull request
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+License
+This project is licensed under the MIT License.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please remember to replace the placeholders like `https://your-app-url.com`, `your-username`, `feature-name`, and add specific details about your project. Additionally
