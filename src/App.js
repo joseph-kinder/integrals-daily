@@ -1,23 +1,30 @@
 import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import IntegralOfTheDay from './components/Integral';
+import MySidebar from './components/Sidebar';
 
 function App() {
+  // State for managing light/dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Toggle function for light/dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <div className="sidebar">
+        <MySidebar 
+          isDarkMode={isDarkMode} 
+          toggleDarkMode={toggleDarkMode}
+        />
+      </div>
+      <div className="content">
+      <IntegralOfTheDay 
+      />
+      </div>
     </div>
   );
 }

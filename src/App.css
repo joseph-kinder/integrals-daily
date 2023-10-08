@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +37,49 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+:root {
+  --color-bg-light: #fff;
+  --color-text-light: #222;
+  --color-bg-dark: #222; 
+  --color-text-dark: #fff;
+}
+
+.light-mode {
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+.dark-mode {
+  background: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.integral-box {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 20px;
+  width: 100vh;
+  height: 50vh; 
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.katex-html {
+  visibility: hidden;
+}
+
+.integral-content {
+  margin-top: 20px; 
 }
