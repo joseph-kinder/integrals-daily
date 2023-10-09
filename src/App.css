@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 .App {
   text-align: center;
   display: flex;
   height: 100vh;
+  font-family: "Source Code Pro";
 }
 
 .App-logo {
@@ -16,8 +19,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,6 +29,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+h2 {
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
@@ -47,13 +52,13 @@
 }
 
 .light-mode {
-  background: var(--color-bg-light);
-  color: var(--color-text-light);
+  background: rgb(250,249,249);
+  background: linear-gradient(45deg, rgba(250,249,249,1) 0%, rgba(204,214,235,1) 35%, rgba(167,208,229,1) 100%);
 }
 
 .dark-mode {
-  background: var(--color-bg-dark);
-  color: var(--color-text-dark);
+  background: rgb(6,13,22);
+  background: linear-gradient(45deg, rgba(6,13,22,1) 0%, rgba(10,50,81,1) 35%, rgba(20,99,142,1) 100%); 
 }
 
 .content {
@@ -61,12 +66,11 @@
   display: flex;
   justify-content: center;
   align-items: center; 
+  flex-direction: column;
 }
 
 .integral-box {
   display: flex;
-  background: #fff;
-  border: 1px solid #ddd;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
@@ -82,4 +86,25 @@
 
 .integral-content {
   margin-top: 20px; 
+}
+
+.integral-latex {
+  font-size: 3em;
+}
+
+.katex-mathml {
+  font-size: 5em;
+}
+
+.glass {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+}
+
+.css-dip3t8 {
+  background-color: rgb(249,249,249, 0) !important;
 }

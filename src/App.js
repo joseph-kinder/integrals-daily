@@ -15,15 +15,22 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
-      <div className="sidebar">
+      <div>
         <MySidebar 
           isDarkMode={isDarkMode} 
           toggleDarkMode={toggleDarkMode}
         />
       </div>
       <div className="content">
-      <IntegralOfTheDay 
-      />
+        <div className="App-header">
+          <h2>Integral of the Day</h2>
+        </div>
+        <div>
+        <IntegralOfTheDay
+          isDarkMode={isDarkMode} 
+          toggleDarkMode={toggleDarkMode} 
+        />
+        </div>
       </div>
     </div>
   );

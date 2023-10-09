@@ -6,7 +6,7 @@
       },
     {
       "date": "9/10/2023",
-      "latex": "\\int_{-\\infty}^{\\infty} e^{-x^2} \\, dx",
+      "latex": "$$\\int_{-\\infty}^{\\infty} e^{-x^2} \\, dx$$",
       "description": "Gaussian integral, often encountered in probability theory and quantum mechanics."
     }
     
