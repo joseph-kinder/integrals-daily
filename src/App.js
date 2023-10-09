@@ -8,19 +8,15 @@ import Footer from './components/Footer';
 function App() {
   // State for managing light/dark mode
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [fade, setFade] = useState(false);
+  const [showPrevious, setShowPrevious] = useState(false);
+
   // Toggle function for light/dark mode
   const toggleDarkMode = () => {
-    setFade(true);
-  
-    setTimeout(() => {
-      setIsDarkMode(!isDarkMode);
-      setFade(false);  
-    }, 300);
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
-    <div className={`App ${fade ? 'fade' : ''} ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+    <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className="sidebar">
         <MySidebar 
           isDarkMode={isDarkMode} 
@@ -34,12 +30,12 @@ function App() {
         <div>
         <IntegralOfTheDay
           isDarkMode={isDarkMode} 
-          toggleDarkMode={toggleDarkMode} 
+          showPrevious={showPrevious}
         />
         </div>
       </div>
       <footer>
-        <Footer />
+        <Footer showPrevious={showPrevious} setShowPrevious={setShowPrevious}/>
       </footer>
     </div>
   );

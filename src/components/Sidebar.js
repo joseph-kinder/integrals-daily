@@ -18,7 +18,9 @@ const MySidebar = ({ isDarkMode, toggleDarkMode }) => {
             <Menu>
                 <MenuItem icon={<FaBars />} suffix={<span>Collapse</span>} onClick={toggleCollapsed} />
                 <MenuItem icon={<FaAdjust />} suffix={<span>{isDarkMode? "Light" : "Dark"} Mode</span>} onClick={toggleDarkMode} />
-                <MenuItem icon={<FaHeart />} suffix={<span>Support Creator</span>} />
+                <a href={'https://www.buymeacoffee.com/joekinder'} target='_blank' rel="noopener noreferrer" style={{textDecoration: 'none', color: 'inherit'}}>
+                    <MenuItem icon={<FaHeart />} suffix={<span>Support Creator</span>} />
+                </a>
             </Menu>
         </Sidebar>
     );

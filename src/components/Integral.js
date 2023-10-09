@@ -3,11 +3,11 @@ import Latex from 'react-latex';
 import integrals from '../data/integrals.json';
 import '../App.css'; // Assuming you have this file
 
-const IntegralOfTheDay = ({ isDarkMode, toggleDarkMode }) => {
+const IntegralOfTheDay = ({ isDarkMode, showPrevious }) => {
     
     const current = new Date();
-    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-
+    const date = `${current.getDate() - (showPrevious ? 1 : 0)}/${current.getMonth() + 1}/${current.getFullYear()}`;
+    
     const todaysIntegral = integrals.find(integral => integral.date === date);
     return (
         <div className={`integral-box ${isDarkMode ? 'dark-mode' : 'light-mode'} glass`}>

@@ -1,12 +1,8 @@
 // Footer.js
-
-import { useState } from 'react';
-
-export default function Footer() {
+const Footer = ({ showPrevious, setShowPrevious }) => {
 
   const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-  const [showPrevious, setShowPrevious] = useState(false);
+  const date = `${current.getDate() - (showPrevious ? 1 : 0)}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
   return (
     <footer>
@@ -20,11 +16,13 @@ export default function Footer() {
           fontSize: 'inherit',
           color: 'inherit',
           fontFamily: 'inherit',
+          visibility: !showPrevious ? 'visible' : 'hidden',
         }}>
-        {showPrevious ? '' : 'Yesterday'}  
+        Yesterday's integral
       </button>
-      
-      <p>{date}</p>
+           <div style={{ flex: 1, textAlign: 'center' }}>
+        <p>{date}</p>
+      </div>
 
       <button
         onClick={() => setShowPrevious(!showPrevious)} 
@@ -36,9 +34,12 @@ export default function Footer() {
           fontSize: 'inherit',
           color: 'inherit',
           fontFamily: 'inherit',
+          visibility: showPrevious ? 'visible' : 'hidden',
         }}>
-        {showPrevious ? 'Today' : ''}  
+        Today's integral
       </button>
     </footer>
   );
 }
+
+export default Footer;
