@@ -5,6 +5,7 @@
   display: flex;
   height: 100vh;
   font-family: "Source Code Pro";
+  color: var(--color-text);
 }
 
 .App-logo {
@@ -33,6 +34,7 @@
 
 h2 {
   text-align: center;
+  color: var(--color-text);
 }
 
 @keyframes App-logo-spin {
@@ -54,11 +56,25 @@ h2 {
 .light-mode {
   background: rgb(250,249,249);
   background: linear-gradient(45deg, rgba(250,249,249,1) 0%, rgba(204,214,235,1) 35%, rgba(167,208,229,1) 100%);
+  --color-text: #000;
 }
 
 .dark-mode {
   background: rgb(6,13,22);
-  background: linear-gradient(45deg, rgba(6,13,22,1) 0%, rgba(10,50,81,1) 35%, rgba(20,99,142,1) 100%); 
+  background: linear-gradient(45deg, rgba(6,13,22,1) 0%, rgba(10,50,81,1) 35%, rgba(20,99,142,1) 100%);
+  --color-text: #fff; 
+}
+
+.fade {
+  transition: background 0.3s, color 0.3s; 
+}
+
+.light-mode.fade {
+  transition: background 0.3s, color 0.3s;  
+}
+
+.dark-mode.fade {
+  transition: background 0.3s, color 0.3s;
 }
 
 .content {
@@ -108,3 +124,33 @@ h2 {
 .css-dip3t8 {
   background-color: rgb(249,249,249, 0) !important;
 }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 0 1rem; 
+}
+
+/* Shift button right when previous */
+footer.show-previous button {
+  order: 1; 
+}
+
+footer button {
+  margin-left: '10px'; 
+  background: 'none'; 
+  border: 'none'; 
+  cursor: 'pointer';
+  font-size: 'inherit';
+  color: 'inherit';
+  font-family: 'inherit';
+}
+

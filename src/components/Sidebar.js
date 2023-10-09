@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { FaBars, FaAdjust, FaHeart } from 'react-icons/fa';
 
 const MySidebar = ({ isDarkMode, toggleDarkMode }) => {

@@ -1,21 +1,27 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
 import IntegralOfTheDay from './components/Integral';
 import MySidebar from './components/Sidebar';
+import Footer from './components/Footer';
 
 function App() {
   // State for managing light/dark mode
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+  const [fade, setFade] = useState(false);
   // Toggle function for light/dark mode
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    setFade(true);
+  
+    setTimeout(() => {
+      setIsDarkMode(!isDarkMode);
+      setFade(false);  
+    }, 300);
   };
 
   return (
-    <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
-      <div>
+    <div className={`App ${fade ? 'fade' : ''} ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <div className="sidebar">
         <MySidebar 
           isDarkMode={isDarkMode} 
           toggleDarkMode={toggleDarkMode}
@@ -32,6 +38,9 @@ function App() {
         />
         </div>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
