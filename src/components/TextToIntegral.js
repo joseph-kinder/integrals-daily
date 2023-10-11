@@ -1,6 +1,6 @@
 
 async function textToIntegralFunction(userInput) {
-    const apiKey = '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'; // Replace with your actual API key
+    const apiKey = process.env.REACT_APP_API_KEY;
     const apiUrl = 'https://api.openai.com/v1/completions';
   
     try {
