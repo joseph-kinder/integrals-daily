@@ -1,13 +1,11 @@
 [
     {
-        "date": "8/10/2023",
-        "latex": "$$\\int_{0}^{1} x^2 \\, dx$$",
-        "description": "The integral of x squared from 0 to 1."
+      "date": "10/10/2023",
+      "latex": "$$\\int_{0}^{1} x^2 \\, dx$$"
       },
     {
-      "date": "9/10/2023",
-      "latex": "$$\\int_{-\\infty}^{\\infty} e^{-x^2} \\, dx$$",
-      "description": "Gaussian integral, often encountered in probability theory and quantum mechanics."
+      "date": "11/10/2023",
+      "latex": "$$\\int_{-\\infty}^{\\infty} e^{-x^2} \\, dx$$"
     }
     
 ]

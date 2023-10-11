@@ -1,5 +1,5 @@
 // Footer.js
-const Footer = ({ showPrevious, setShowPrevious }) => {
+const Footer = ({ showPrevious, setShowPrevious, textToIntegral }) => {
 
   const current = new Date();
   const date = `${current.getDate() - (showPrevious ? 1 : 0)}/${current.getMonth() + 1}/${current.getFullYear()}`;
@@ -16,7 +16,7 @@ const Footer = ({ showPrevious, setShowPrevious }) => {
           fontSize: 'inherit',
           color: 'inherit',
           fontFamily: 'inherit',
-          visibility: !showPrevious ? 'visible' : 'hidden',
+          visibility: !showPrevious && !textToIntegral ? 'visible' : 'hidden',
         }}>
         Yesterday's integral
       </button>
@@ -34,7 +34,7 @@ const Footer = ({ showPrevious, setShowPrevious }) => {
           fontSize: 'inherit',
           color: 'inherit',
           fontFamily: 'inherit',
-          visibility: showPrevious ? 'visible' : 'hidden',
+          visibility: showPrevious && !textToIntegral ? 'visible' : 'hidden',
         }}>
         Today's integral
       </button>

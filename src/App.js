@@ -7,13 +7,24 @@ import Footer from './components/Footer';
 
 function App() {
   // State for managing light/dark mode
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('darkMode') === 'true' || false);
   const [showPrevious, setShowPrevious] = useState(false);
+  const [textToIntegral, setTextToIntegral] = useState(localStorage.getItem('textToIntegral') === 'true' || false);
 
+  
   // Toggle function for light/dark mode
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem('darkMode', newMode.toString());
   };
+
+  const toggleTextToIntegral = () => {
+    const newMode = !textToIntegral;
+    setTextToIntegral(newMode);
+    localStorage.setItem('textToIntegral', newMode.toString());
+  };
+  
 
   return (
     <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
@@ -21,21 +32,27 @@ function App() {
         <MySidebar 
           isDarkMode={isDarkMode} 
           toggleDarkMode={toggleDarkMode}
+          toggleTextToIntegral={toggleTextToIntegral}
         />
       </div>
       <div className="content">
         <div className="App-header">
-          <h2>Integral of the Day</h2>
+          <h2>{textToIntegral ? "Text to Integral" : "Today's Integral"}</h2>
         </div>
         <div>
         <IntegralOfTheDay
           isDarkMode={isDarkMode} 
           showPrevious={showPrevious}
+          textToIntegral={textToIntegral}
         />
         </div>
       </div>
       <footer>
-        <Footer showPrevious={showPrevious} setShowPrevious={setShowPrevious}/>
+        <Footer 
+          showPrevious={showPrevious}
+          setShowPrevious={setShowPrevious}
+          textToIntegral={textToIntegral}
+        />
       </footer>
     </div>
   );
