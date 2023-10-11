@@ -1,6 +1,7 @@
 
-async function textToIntegralFunction(userInput) {
+const textToIntegralFunction = async (userInput) => {
     const apiKey = process.env.REACT_APP_API_KEY;
+
     const apiUrl = 'https://api.openai.com/v1/completions';
   
     try {
@@ -42,4 +43,4 @@ async function textToIntegralFunction(userInput) {
         }
   }
 
-module.exports = textToIntegralFunction;
+export default textToIntegralFunction;
