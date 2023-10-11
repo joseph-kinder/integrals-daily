@@ -149,3 +149,18 @@ footer button {
   font-family: 'inherit';
 }
 
+.input-container {
+  position: relative;
+  width: 300px; /* Set the initial width of the input container */
+}
+
+#expanding-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: width 0.1s; /* Add transition for smooth expansion */
+}
+
