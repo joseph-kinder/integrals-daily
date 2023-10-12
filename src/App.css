@@ -90,12 +90,18 @@ h2 {
 }
 
 .integral-content {
+  display: flex;
   margin-top: 20px; 
+}
+
+.integral {
+  flex-grow: 1;
+  overflow-wrap: anywhere;
 }
 
 
 .katex-mathml {
-  font-size: 7em;
+  font-size: clamp(1rem, 7vw, 5rem);
 }
 
 .glass {

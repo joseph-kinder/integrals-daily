@@ -45,7 +45,7 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
                 },
                 body: JSON.stringify({
                 model: 'text-davinci-003',
-                prompt: `In Latex form, generate an integral that matches this input: ${userInput}`,
+                prompt: `Generate this integral: ${userInput}, in Latex between two $ signs`,
                 max_tokens: 50 // You can adjust this value based on your desired output length
                 })
             });
@@ -84,23 +84,39 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
         {textToIntegral && 
             <>
               <form style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}} onSubmit={handleSubmit}>
-                <input 
-                  type="text"
-                  value={userInput}
-                  onChange={handleChange}
-                  placeholder="Enter text to generate integral"
-                  className={"glass expand"} 
-                  style={{
-                    padding: '12px 20px',
-                    border: '1px solid #ccc',
-                    borderRadius: '4px',
-                    fontSize: '16px',
-                    marginBottom: '10px',
-                    fontFamily: 'inherit',
-                    color: 'inherit',
-                    width: '500px' 
-                  }}
-                />
+                <div style={{display: 'flex', flexDirection: 'row'}}>
+                    <input 
+                    type="text"
+                    value={userInput}
+                    onChange={handleChange}
+                    placeholder="Enter text to generate integral"
+                    className={"glass expand"} 
+                    style={{
+                        padding: '12px 20px',
+                        border: '1px solid #ccc',
+                        borderRadius: '4px',
+                        fontSize: '16px',
+                        marginBottom: '10px',
+                        fontFamily: 'inherit',
+                        color: 'inherit',
+                        width: '500px' 
+                    }}
+                    />
+                    <button 
+                        className={"glass"} 
+                        style={{
+                            border: '1px solid #ccc',
+                            marginLeft: '10px',
+                            cursor: 'pointer',
+                            fontSize: 'inherit',
+                            color: 'inherit',
+                            fontFamily: 'inherit',
+                            borderRadius: '6px',
+                            height: '46px',
+                            width: '100px'
+                        }} 
+                        type="submit">Generate</button>
+                </div>
 
                 <div className={`integral-box glass expand`} style={{margin: '20px'}}>
                     {generatedIntegral && 
@@ -109,14 +125,6 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
                         </div>
                     }
                 </div>
-                <button style={{ 
-                    background: 'none', 
-                    border: 'none', 
-                    cursor: 'pointer',
-                    fontSize: 'inherit',
-                    color: 'inherit',
-                    fontFamily: 'inherit',
-                    }} type="submit">Generate</button>
               </form>
               
             </>
@@ -125,7 +133,7 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
             <div className={`integral-box ${isDarkMode ? 'dark-mode' : 'light-mode'} glass expand`}>
                 <div className="integral-content">
                     <div className="integral">
-                        <Latex className="integral-latex">{`${todaysIntegral.latex}`}</Latex>
+                        <Latex className="integral-latex">{`$${todaysIntegral.latex}$`}</Latex>
                     </div>
                 </div>
             </div>
