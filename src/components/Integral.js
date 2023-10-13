@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import Latex from 'react-latex';
 import integrals from '../data/integrals.json';
 import '../App.css';
+import Skeleton from '@mui/material/Skeleton';
 
 const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
 
@@ -44,9 +45,10 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
                 'Authorization': `Bearer ${apiKey}`
                 },
                 body: JSON.stringify({
-                model: 'text-davinci-003',
-                prompt: `Generate this integral: ${userInput}, in Latex between two $ signs`,
-                max_tokens: 50 // You can adjust this value based on your desired output length
+                model: 'gpt-3.5-turbo-instruct',
+                prompt: `Generate a mathematically correct integral: ${userInput}, in Latex between two $ signs.`,
+                max_tokens: 50,
+                temperature: 0.5
                 })
             });
             
@@ -103,7 +105,7 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
                     }}
                     />
                     <button 
-                        className={"glass"} 
+                        className={"glass expand"} 
                         style={{
                             border: '1px solid #ccc',
                             marginLeft: '10px',
@@ -119,11 +121,14 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
                 </div>
 
                 <div className={`integral-box glass expand`} style={{margin: '20px'}}>
-                    {generatedIntegral && 
-                        <div className="integral">
-                        <Latex>{generatedIntegral}</Latex>
-                        </div>
-                    }
+                    {loading ? (
+                        <Skeleton variant="rounded" animation="wave" width={400} height={118} />  
+                    ) : (
+                        generatedIntegral && 
+                            <div className="integral">
+                                <Latex>{generatedIntegral}</Latex>
+                            </div>    
+                    )}
                 </div>
               </form>
               

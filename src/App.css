@@ -94,7 +94,7 @@ h2 {
   margin-top: 20px; 
 }
 
-.integral {
+.integral-latex {
   flex-grow: 1;
   overflow-wrap: anywhere;
 }
@@ -170,3 +170,6 @@ footer button {
   transition: width 0.1s; /* Add transition for smooth expansion */
 }
 
+button:active {
+  background-color: darkgray;
+}
