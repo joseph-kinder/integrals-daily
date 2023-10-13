@@ -4,7 +4,7 @@ import { FaBars, FaAdjust, FaHeart, FaExchangeAlt } from 'react-icons/fa';
 
 const MySidebar = ({ isDarkMode, toggleDarkMode, toggleTextToIntegral }) => {
 
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(true);
 
     const toggleCollapsed = () => {
         setCollapsed(!collapsed);

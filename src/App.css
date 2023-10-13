@@ -80,13 +80,15 @@ h2 {
   align-items: center;
   border-radius: 50px;
   padding: 20px;
-  width: 100vh;
+  min-width: 50%;
+  max-width: 80%;
   height: 50vh; 
   box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .katex-html {
-  visibility: hidden;
+  /* visibility: hidden; */
+  font-size: 0;
 }
 
 .integral-content {
@@ -94,9 +96,10 @@ h2 {
   margin-top: 20px; 
 }
 
-.integral-latex {
+.integral {
   flex-grow: 1;
   overflow-wrap: anywhere;
+  margin: 100px;
 }
 
 

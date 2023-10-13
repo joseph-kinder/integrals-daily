@@ -48,7 +48,7 @@ const IntegralOfTheDay = ({ isDarkMode, showPrevious, textToIntegral }) => {
                 model: 'gpt-3.5-turbo-instruct',
                 prompt: `Generate a mathematically correct integral: ${userInput}, in Latex between two $ signs.`,
                 max_tokens: 50,
-                temperature: 0.5
+                temperature: 0.9
                 })
             });
             
